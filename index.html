@@ -6,12 +6,6 @@
   <title>eSIM เที่ยวต่างประเทศ | ญี่ปุ่น เกาหลี ฮ่องกง จีน</title>
   <meta name="description" content="สั่งซื้อ eSIM สำหรับญี่ปุ่น เกาหลี ฮ่องกง และจีน ใช้งานง่าย ไม่ต้องเปลี่ยนซิม สแกน QR แล้วใช้งานได้เลย ราคาเริ่มต้นคุ้มกว่าโรมมิ่ง" />
   <meta name="keywords" content="eSIM ญี่ปุ่น, eSIM เกาหลี, eSIM ฮ่องกง, eSIM จีน, eSIM ต่างประเทศ, eSIM ราคาถูก, เน็ตต่างประเทศ" />
-  <link rel="canonical" href="https://yourdomain.com/esim" />
-
-  <meta property="og:title" content="eSIM เที่ยวต่างประเทศ | ญี่ปุ่น เกาหลี ฮ่องกง จีน" />
-  <meta property="og:description" content="เลือกประเทศแล้วกดสั่งซื้อได้ทันที ไม่ต้องเปลี่ยนซิม สแกน QR แล้วใช้งานได้เลย" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=1200&auto=format&fit=crop" />
 
   <!-- Facebook Pixel -->
   <script>
@@ -97,7 +91,6 @@
       --orange:#ff5a00;
       --orange-2:#ff8a1d;
       --green:#22c55e;
-      --pink:#ff477e;
       --shadow:0 18px 40px rgba(0,0,0,.35);
       --max:1180px;
     }
@@ -116,6 +109,7 @@
     }
 
     a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
     .container{width:100%;max-width:var(--max);margin:0 auto;padding:0 16px}
 
     .topbar{
@@ -135,7 +129,6 @@
     .brand{
       font-size:22px;
       font-weight:900;
-      letter-spacing:.2px;
     }
     .brand span{color:var(--orange)}
     .top-cta{
@@ -149,11 +142,11 @@
     }
 
     .hero{
-      padding:56px 0 30px;
+      padding:54px 0 30px;
     }
     .hero-wrap{
       display:grid;
-      grid-template-columns:1.08fr .92fr;
+      grid-template-columns:1.02fr .98fr;
       gap:22px;
       align-items:stretch;
     }
@@ -162,14 +155,17 @@
       border:1px solid var(--line);
       border-radius:28px;
       box-shadow:var(--shadow);
+      overflow:hidden;
     }
     .hero-left{padding:34px}
     .hero-right{
-      padding:22px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:390px;
+      min-height:440px;
+      position:relative;
+    }
+    .hero-right img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
     .hero-badge{
@@ -185,7 +181,6 @@
       font-weight:700;
       margin-bottom:16px;
     }
-
     .hero h1{
       font-size:44px;
       line-height:1.08;
@@ -202,7 +197,6 @@
       max-width:720px;
       margin-bottom:18px;
     }
-
     .hero-points{
       display:flex;
       flex-wrap:wrap;
@@ -218,20 +212,18 @@
       font-size:14px;
       font-weight:600;
     }
-
     .hero-social-proof{
       margin:10px 0 24px;
       color:#fca46d;
       font-size:14px;
       font-weight:800;
     }
-
     .hero-actions{
       display:flex;
       gap:12px;
       flex-wrap:wrap;
     }
-    .btn-main{
+    .btn-main,.btn-orange{
       background:linear-gradient(135deg,var(--orange),var(--orange-2));
       color:#fff;
       padding:15px 22px;
@@ -239,6 +231,7 @@
       font-weight:900;
       font-size:16px;
       box-shadow:0 14px 28px rgba(255,90,0,.26);
+      display:inline-block;
     }
     .btn-ghost{
       background:rgba(255,255,255,.04);
@@ -248,74 +241,7 @@
       border-radius:16px;
       font-weight:800;
       font-size:16px;
-    }
-
-    .offer-box{
-      width:100%;
-      border-radius:24px;
-      background:linear-gradient(180deg,#1b1b20,#131317);
-      border:1px solid var(--line);
-      padding:24px;
-      position:relative;
-      overflow:hidden;
-    }
-    .offer-box:before{
-      content:"";
-      position:absolute;
-      inset:auto -60px -60px auto;
-      width:180px;height:180px;
-      background:radial-gradient(circle, rgba(255,90,0,.20), transparent 65%);
-      pointer-events:none;
-    }
-    .offer-title{
-      font-size:18px;
-      color:#ffd8c3;
-      font-weight:900;
-      margin-bottom:8px;
-    }
-    .offer-big{
-      font-size:48px;
-      line-height:1.02;
-      font-weight:900;
-      color:var(--orange);
-      margin-bottom:8px;
-    }
-    .offer-desc{
-      color:var(--muted);
-      font-size:15px;
-      margin-bottom:18px;
-    }
-    .offer-list{
-      display:grid;
-      gap:10px;
-      margin-bottom:18px;
-    }
-    .offer-item{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      background:rgba(255,255,255,.03);
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:12px 14px;
-    }
-    .offer-item b{
-      display:block;
-      margin-bottom:2px;
-    }
-    .offer-item span{
-      color:var(--muted);
-      font-size:14px;
-    }
-    .offer-cta{
-      display:block;
-      text-align:center;
-      background:linear-gradient(135deg,var(--orange),var(--orange-2));
-      border-radius:16px;
-      padding:15px 18px;
-      font-weight:900;
-      font-size:16px;
-      color:#fff;
+      display:inline-block;
     }
 
     .section{
@@ -363,6 +289,39 @@
     .benefit p{
       color:var(--muted);
       font-size:14px;
+    }
+
+    .image-showcase{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      align-items:stretch;
+    }
+    .image-card{
+      background:linear-gradient(180deg,var(--card),var(--card-2));
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .image-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .image-card-content{
+      padding:18px;
+    }
+    .image-card-content h3{
+      font-size:22px;
+      font-weight:900;
+      margin-bottom:8px;
+    }
+    .image-card-content p{
+      color:var(--muted);
+      font-size:15px;
+      margin-bottom:14px;
     }
 
     .country-grid{
@@ -430,14 +389,12 @@
       color:#eaeaf0;
       font-size:14px;
     }
-
     .mini-proof{
       margin-bottom:14px;
       color:var(--green);
       font-size:13px;
       font-weight:800;
     }
-
     .price-box{
       background:#101014;
       border:1px solid var(--line);
@@ -478,7 +435,6 @@
       margin-top:8px;
       font-weight:700;
     }
-
     .buy-btn{
       display:block;
       width:100%;
@@ -566,15 +522,6 @@
       max-width:740px;
       margin:0 auto 18px;
     }
-    .final-cta a{
-      display:inline-block;
-      background:linear-gradient(135deg,var(--orange),var(--orange-2));
-      color:#fff;
-      padding:15px 22px;
-      border-radius:16px;
-      font-weight:900;
-      font-size:16px;
-    }
 
     footer{
       padding:30px 0 26px;
@@ -648,7 +595,7 @@
     }
 
     @media (max-width: 1024px){
-      .hero-wrap,.benefits,.country-grid,.steps{
+      .hero-wrap,.benefits,.country-grid,.steps,.image-showcase{
         grid-template-columns:1fr 1fr;
       }
       .hero h1{font-size:36px}
@@ -659,10 +606,10 @@
       body{padding-bottom:98px}
       .top-cta{display:none}
       .hero{padding:28px 0 18px}
-      .hero-wrap,.benefits,.country-grid,.steps{
+      .hero-wrap,.benefits,.country-grid,.steps,.image-showcase{
         grid-template-columns:1fr;
       }
-      .hero-left,.hero-right{padding:20px}
+      .hero-left{padding:20px}
       .hero-right{min-height:auto}
       .hero h1{font-size:30px}
       .section-title{font-size:24px}
@@ -717,45 +664,12 @@
 
           <div class="hero-actions">
             <a class="btn-main" href="#country-list">ดูประเทศทั้งหมด</a>
-            <a class="btn-ghost" href="#faq">ดูคำถามที่พบบ่อย</a>
+            <a class="btn-ghost" href="#ad-images">ดูภาพโปรโมชั่น</a>
           </div>
         </div>
 
         <div class="hero-right">
-          <div class="offer-box">
-            <div class="offer-title">ทำไมคนเดินทางถึงชอบ eSIM</div>
-            <div class="offer-big">เริ่มต้นคุ้ม</div>
-            <div class="offer-desc">
-              เลือกประเทศ กดซื้อ แล้วไปเลือกแพ็กที่เหมาะกับทริปของคุณได้ทันที
-              ลดทันที $5 ตอนชำระเงิน
-            </div>
-
-            <div class="offer-list">
-              <div class="offer-item">
-                <div>⚡</div>
-                <div>
-                  <b>พร้อมใช้ไว</b>
-                  <span>ซื้อก่อนเดินทาง ถึงที่แล้วใช้งานได้เลย</span>
-                </div>
-              </div>
-              <div class="offer-item">
-                <div>📱</div>
-                <div>
-                  <b>ไม่ต้องเปลี่ยนซิมจริง</b>
-                  <span>เหมาะกับคนที่ยังอยากเก็บเบอร์หลักไว้ใช้งาน</span>
-                </div>
-              </div>
-              <div class="offer-item">
-                <div>🌍</div>
-                <div>
-                  <b>เหมาะกับนักเดินทาง</b>
-                  <span>ใช้แผนที่ แชต เรียกรถ และโซเชียลได้ตลอดทริป</span>
-                </div>
-              </div>
-            </div>
-
-            <a class="offer-cta" href="#country-list">เริ่มเลือกประเทศเลย</a>
-          </div>
+          <img src="hero-esim-travel.png" alt="eSIM เที่ยวต่างประเทศ ใช้งานง่าย ไม่ต้องเปลี่ยนซิม">
         </div>
       </div>
     </div>
@@ -793,6 +707,33 @@
     </div>
   </section>
 
+  <section class="section" id="ad-images">
+    <div class="container">
+      <h2 class="section-title">ภาพโปรโมชัน</h2>
+      <p class="section-subtitle">
+        ใส่ภาพขายจริงในหน้าเว็บเพื่อเพิ่มความน่าเชื่อถือ และช่วยให้คนหยุดดูเร็วขึ้น
+      </p>
+
+      <div class="image-showcase">
+        <div class="image-card">
+          <img src="compare-esim.png" alt="เปรียบเทียบซิมเดิมกับ eSIM">
+          <div class="image-card-content">
+            <h3>เปรียบเทียบให้เห็นชัด</h3>
+            <p>ช่วยให้ลูกค้าเข้าใจทันทีว่า eSIM สะดวกกว่า ไม่ต้องแกะซิม ไม่ต้องรอ และคุมค่าใช้จ่ายง่ายกว่า</p>
+          </div>
+        </div>
+
+        <div class="image-card">
+          <img src="airport-esim.png" alt="eSIM พร้อมใช้ใน 5 นาที">
+          <div class="image-card-content">
+            <h3>พร้อมใช้ก่อนบิน</h3>
+            <p>ภาพแนวพร้อมเดินทาง เหมาะกับใช้ในหน้าเว็บ โพสต์โฆษณา และรีมาร์เก็ตติ้ง</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="country-list">
     <div class="container">
       <h2 class="section-title">เลือกประเทศที่ต้องการใช้งาน</h2>
@@ -801,7 +742,6 @@
       </p>
 
       <div class="country-grid">
-        <!-- JAPAN -->
         <div class="country-card">
           <div class="country-head">
             <div class="flag">🇯🇵</div>
@@ -833,7 +773,6 @@
              rel="noopener noreferrer">สั่งซื้อ eSIM ญี่ปุ่น</a>
         </div>
 
-        <!-- KOREA -->
         <div class="country-card">
           <div class="country-head">
             <div class="flag">🇰🇷</div>
@@ -865,7 +804,6 @@
              rel="noopener noreferrer">สั่งซื้อ eSIM เกาหลี</a>
         </div>
 
-        <!-- HONG KONG -->
         <div class="country-card">
           <div class="country-head">
             <div class="flag">🇭🇰</div>
@@ -897,7 +835,6 @@
              rel="noopener noreferrer">สั่งซื้อ eSIM ฮ่องกง</a>
         </div>
 
-        <!-- CHINA -->
         <div class="country-card">
           <div class="country-head">
             <div class="flag">🇨🇳</div>
@@ -998,7 +935,7 @@
           เหมาะสำหรับคนที่อยากเตรียมอินเทอร์เน็ตให้พร้อมก่อนออกเดินทาง
           เลือกประเทศจากด้านบน แล้วไปเลือกแพ็กที่เหมาะกับทริปของคุณได้ทันที
         </p>
-        <a href="#country-list">เลือกประเทศตอนนี้</a>
+        <a href="#country-list" class="btn-orange">เลือกประเทศตอนนี้</a>
       </div>
     </div>
   </section>
@@ -1013,17 +950,12 @@
     <a href="#country-list">🌍 เลือกประเทศและสั่งซื้อทันที</a>
   </div>
 
-  <!-- Toast Social Proof -->
   <div id="esimToast" class="esim-toast">
     <div class="esim-toast-icon">🌍</div>
-    <div class="esim-toast-text" id="esimToastText">
-      คุณเมย์ จากกรุงเทพฯ เพิ่งซื้อ eSIM ญี่ปุ่น
-    </div>
+    <div class="esim-toast-text" id="esimToastText">คุณเมย์ จากกรุงเทพฯ เพิ่งซื้อ eSIM ญี่ปุ่น</div>
   </div>
 
   <script>
-    const AFFILIATE_LINK = "https://www.superalink.com/destination/aff/M00000000";
-
     function trackCountryClick(countryEn, countryTh, priceValue) {
       try {
         const safeValue = Number(priceValue || 0);
@@ -1084,34 +1016,18 @@
       });
     });
 
-    // Social proof toast
     const esimToastEl = document.getElementById('esimToast');
     const esimToastTextEl = document.getElementById('esimToastText');
 
-    const esimNames = [
-      'คุณเมย์','คุณฟ้า','คุณนัท','คุณแพร','คุณมิ้น','คุณแอน',
-      'คุณโบว์','คุณจอย','คุณเกด','คุณฝน','คุณออม','คุณปาล์ม'
-    ];
-
-    const esimAreas = [
-      'กรุงเทพฯ','ชลบุรี','เชียงใหม่','ภูเก็ต','ขอนแก่น',
-      'นครปฐม','อยุธยา','ระยอง','สงขลา','โคราช'
-    ];
-
+    const esimNames = ['คุณเมย์','คุณฟ้า','คุณนัท','คุณแพร','คุณมิ้น','คุณแอน','คุณโบว์','คุณจอย','คุณเกด','คุณฝน','คุณออม','คุณปาล์ม'];
+    const esimAreas = ['กรุงเทพฯ','ชลบุรี','เชียงใหม่','ภูเก็ต','ขอนแก่น','นครปฐม','อยุธยา','ระยอง','สงขลา','โคราช'];
     const esimCountries = [
       { th: 'ญี่ปุ่น', en: 'Japan' },
       { th: 'เกาหลี', en: 'Korea' },
       { th: 'ฮ่องกง', en: 'Hong Kong' },
       { th: 'จีน', en: 'China' }
     ];
-
-    const esimUseCases = [
-      'ไปเที่ยวเอง',
-      'ใช้เน็ตระหว่างทริป',
-      'เตรียมก่อนบิน',
-      'ใช้แผนที่และโซเชียล',
-      'ใช้เดินทางในเมือง'
-    ];
+    const esimUseCases = ['ไปเที่ยวเอง','ใช้เน็ตระหว่างทริป','เตรียมก่อนบิน','ใช้แผนที่และโซเชียล','ใช้เดินทางในเมือง'];
 
     function randomPick(arr) {
       return arr[Math.floor(Math.random() * arr.length)];
@@ -1147,7 +1063,6 @@
 
     function showEsimToast(message) {
       if (!esimToastEl || !esimToastTextEl) return;
-
       esimToastTextEl.textContent = message;
       esimToastEl.style.display = 'flex';
 
