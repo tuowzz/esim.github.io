@@ -142,93 +142,112 @@
     }
 
     .hero{
-    padding:0;
-  }
+      padding:0;
+    }
 
-  .hero-full{
-    position:relative;
-    width:100%;
-    overflow:hidden;
-    min-height:auto;
-  }
-
-  .hero-full img{
-    width:100%;
-    height:auto;
-    max-height:720px;
-    object-fit:cover;
-    object-position:center;
-    display:block;
-  }
-
-  .hero-overlay{
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:flex-end;
-    background:linear-gradient(
-      to top,
-      rgba(0,0,0,.72) 0%,
-      rgba(0,0,0,.42) 38%,
-      rgba(0,0,0,.14) 68%,
-      rgba(0,0,0,.06) 100%
-    );
-  }
-
-  .hero-content{
-    width:100%;
-    max-width:1180px;
-    margin:0 auto;
-    padding:28px 16px 28px;
-  }
-
-  .hero-text{
-    max-width:620px;
-  }
-
-  @media (max-width: 768px){
     .hero-full{
-      min-height:auto;
+      position:relative;
+      width:100%;
+      overflow:hidden;
+      background:#111;
     }
 
     .hero-full img{
       width:100%;
-      height:auto;
-      max-height:none;
-      min-height:420px;
+      height:min(72vw, 760px);
+      min-height:520px;
       object-fit:cover;
-      object-position:center;
+      object-position:center center;
+      display:block;
     }
 
     .hero-overlay{
+      position:absolute;
+      inset:0;
+      display:flex;
       align-items:flex-end;
+      background:linear-gradient(
+        to top,
+        rgba(0,0,0,.78) 0%,
+        rgba(0,0,0,.48) 36%,
+        rgba(0,0,0,.20) 64%,
+        rgba(0,0,0,.08) 100%
+      );
     }
 
     .hero-content{
-      padding:20px 16px 22px;
+      width:100%;
+      max-width:var(--max);
+      margin:0 auto;
+      padding:30px 16px 30px;
+    }
+
+    .hero-text{
+      max-width:620px;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(255,90,0,.16);
+      border:1px solid rgba(255,90,0,.30);
+      color:#ffd7be;
+      border-radius:999px;
+      padding:8px 14px;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:16px;
     }
 
     .hero h1{
-      font-size:34px;
-      line-height:1.08;
-      margin-bottom:10px;
+      font-size:52px;
+      line-height:1.05;
+      font-weight:900;
+      margin-bottom:12px;
+    }
+
+    .hero h1 .highlight{
+      display:block;
+      color:var(--orange);
     }
 
     .hero p{
-      font-size:15px;
-      margin-bottom:14px;
+      font-size:18px;
+      color:rgba(255,255,255,.92);
+      max-width:640px;
+      margin-bottom:18px;
     }
 
     .hero-points{
-      gap:8px;
-      margin-bottom:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:16px;
     }
 
     .hero-points span{
-      font-size:13px;
-      padding:8px 11px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      padding:10px 13px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:700;
     }
-  }
+
+    .hero-social-proof{
+      margin:10px 0 24px;
+      color:#ffc08c;
+      font-size:14px;
+      font-weight:800;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
 
     .btn-main,.btn-orange{
       background:linear-gradient(135deg,var(--orange),var(--orange-2));
@@ -655,25 +674,38 @@
       body{padding-bottom:98px}
       .top-cta{display:none}
 
-      .hero-full{
-        min-height:100vh;
-      }
-
       .hero-full img{
-        height:100vh;
+        height:auto;
+        min-height:0;
+        max-height:none;
+        aspect-ratio: 4 / 5;
+        object-fit:cover;
+        object-position:center;
       }
 
       .hero-content{
-        padding:22px 16px 30px;
+        padding:18px 16px 22px;
       }
 
       .hero h1{
-        font-size:36px;
+        font-size:34px;
         line-height:1.08;
+        margin-bottom:10px;
       }
 
       .hero p{
         font-size:15px;
+        margin-bottom:14px;
+      }
+
+      .hero-points{
+        gap:8px;
+        margin-bottom:14px;
+      }
+
+      .hero-points span{
+        font-size:13px;
+        padding:8px 11px;
       }
 
       .benefits,.country-grid,.steps,.image-showcase{
@@ -697,6 +729,25 @@
         bottom:92px;
         font-size:13px;
         padding:10px 14px;
+      }
+    }
+
+    @media (max-width: 420px){
+      .hero-full img{
+        aspect-ratio: 9 / 12;
+      }
+
+      .hero h1{
+        font-size:30px;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+
+      .btn-main,.btn-ghost{
+        width:100%;
+        text-align:center;
       }
     }
   </style>
@@ -778,6 +829,13 @@
       </div>
     </div>
   </section>
+
+  <section class="section" id="ad-images">
+    <div class="container">
+      <h2 class="section-title">ภาพโปรโมชัน</h2>
+      <p class="section-subtitle">
+        ภาพช่วยให้คนหยุดดูเร็วขึ้น เข้าใจประโยชน์เร็วขึ้น และเพิ่มความน่าเชื่อถือของหน้าเว็บ
+      </p>
 
       <div class="image-showcase">
         <div class="image-card">
