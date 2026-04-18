@@ -115,7 +115,7 @@
     .topbar{
       position:sticky;
       top:0;
-      z-index:60;
+      z-index:100;
       backdrop-filter: blur(10px);
       background:rgba(11,11,13,.78);
       border-bottom:1px solid var(--line);
@@ -142,38 +142,50 @@
     }
 
     .hero{
-      padding:54px 0 30px;
+      padding:0;
     }
-    .hero-wrap{
-      display:grid;
-      grid-template-columns:1.02fr .98fr;
-      gap:22px;
-      align-items:stretch;
-    }
-    .hero-left,.hero-right{
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid var(--line);
-      border-radius:28px;
-      box-shadow:var(--shadow);
+
+    .hero-full{
+      position:relative;
+      width:100%;
+      min-height:100vh;
       overflow:hidden;
     }
-    .hero-left{padding:34px}
-    .hero-right{
-      min-height:440px;
-      position:relative;
-    }
-    .hero-right img{
+
+    .hero-full img{
       width:100%;
-      height:100%;
+      height:100vh;
       object-fit:cover;
+      object-position:center;
+      display:block;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:flex-end;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.74) 0%, rgba(0,0,0,.42) 38%, rgba(0,0,0,.12) 70%, rgba(0,0,0,.06) 100%);
+    }
+
+    .hero-content{
+      width:100%;
+      max-width:var(--max);
+      margin:0 auto;
+      padding:32px 16px 34px;
+    }
+
+    .hero-text{
+      max-width:640px;
     }
 
     .hero-badge{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      background:rgba(255,90,0,.12);
-      border:1px solid rgba(255,90,0,.25);
+      background:rgba(255,90,0,.16);
+      border:1px solid rgba(255,90,0,.30);
       color:#ffd7be;
       border-radius:999px;
       padding:8px 14px;
@@ -181,48 +193,56 @@
       font-weight:700;
       margin-bottom:16px;
     }
+
     .hero h1{
-      font-size:44px;
-      line-height:1.08;
+      font-size:52px;
+      line-height:1.05;
       font-weight:900;
-      margin-bottom:14px;
+      margin-bottom:12px;
     }
+
     .hero h1 .highlight{
       display:block;
       color:var(--orange);
     }
+
     .hero p{
-      font-size:17px;
-      color:var(--muted);
-      max-width:720px;
+      font-size:18px;
+      color:rgba(255,255,255,.92);
+      max-width:640px;
       margin-bottom:18px;
     }
+
     .hero-points{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      margin-bottom:16px;
+      margin-bottom:18px;
     }
+
     .hero-points span{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:#e7e7ec;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.08);
+      color:#fff;
       padding:10px 13px;
       border-radius:999px;
       font-size:14px;
-      font-weight:600;
+      font-weight:700;
     }
+
     .hero-social-proof{
       margin:10px 0 24px;
-      color:#fca46d;
+      color:#ffc08c;
       font-size:14px;
       font-weight:800;
     }
+
     .hero-actions{
       display:flex;
       gap:12px;
       flex-wrap:wrap;
     }
+
     .btn-main,.btn-orange{
       background:linear-gradient(135deg,var(--orange),var(--orange-2));
       color:#fff;
@@ -233,9 +253,10 @@
       box-shadow:0 14px 28px rgba(255,90,0,.26);
       display:inline-block;
     }
+
     .btn-ghost{
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--line);
+      background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.14);
       color:#fff;
       padding:15px 22px;
       border-radius:16px;
@@ -245,14 +266,16 @@
     }
 
     .section{
-      padding:26px 0 10px;
+      padding:30px 0 10px;
     }
+
     .section-title{
       text-align:center;
       font-size:32px;
       font-weight:900;
       margin-bottom:8px;
     }
+
     .section-subtitle{
       text-align:center;
       color:var(--muted);
@@ -266,6 +289,7 @@
       grid-template-columns:repeat(4,1fr);
       gap:16px;
     }
+
     .benefit{
       background:linear-gradient(180deg,var(--card),var(--card-2));
       border:1px solid var(--line);
@@ -273,6 +297,7 @@
       padding:22px;
       box-shadow:var(--shadow);
     }
+
     .benefit .icon{
       width:50px;height:50px;border-radius:16px;
       display:flex;align-items:center;justify-content:center;
@@ -281,11 +306,13 @@
       font-size:24px;
       margin-bottom:14px;
     }
+
     .benefit h3{
       font-size:18px;
       margin-bottom:8px;
       font-weight:800;
     }
+
     .benefit p{
       color:var(--muted);
       font-size:14px;
@@ -297,6 +324,7 @@
       gap:20px;
       align-items:stretch;
     }
+
     .image-card{
       background:linear-gradient(180deg,var(--card),var(--card-2));
       border:1px solid var(--line);
@@ -304,24 +332,27 @@
       overflow:hidden;
       box-shadow:var(--shadow);
     }
+
     .image-card img{
       width:100%;
-      height:100%;
+      height:340px;
       object-fit:cover;
       display:block;
     }
+
     .image-card-content{
       padding:18px;
     }
+
     .image-card-content h3{
       font-size:22px;
       font-weight:900;
       margin-bottom:8px;
     }
+
     .image-card-content p{
       color:var(--muted);
       font-size:15px;
-      margin-bottom:14px;
     }
 
     .country-grid{
@@ -329,6 +360,7 @@
       grid-template-columns:repeat(2,1fr);
       gap:20px;
     }
+
     .country-card{
       position:relative;
       background:linear-gradient(180deg,var(--card),var(--card-2));
@@ -338,26 +370,31 @@
       box-shadow:var(--shadow);
       overflow:hidden;
     }
+
     .country-card:before{
       content:"";
       position:absolute;
       top:0;left:0;width:100%;height:5px;
       background:linear-gradient(90deg,var(--orange),var(--orange-2));
     }
+
     .country-head{
       display:flex;
       align-items:center;
       gap:12px;
       margin-bottom:12px;
     }
+
     .flag{
       font-size:34px;
     }
+
     .country-name{
       font-size:28px;
       font-weight:900;
       line-height:1.1;
     }
+
     .country-badge{
       display:inline-block;
       background:rgba(255,90,0,.12);
@@ -369,18 +406,21 @@
       font-weight:800;
       margin-bottom:14px;
     }
+
     .country-desc{
       color:var(--muted);
       font-size:15px;
       margin-bottom:14px;
       min-height:72px;
     }
+
     .features{
       list-style:none;
       display:grid;
       gap:8px;
       margin-bottom:14px;
     }
+
     .features li{
       padding:10px 12px;
       background:rgba(255,255,255,.03);
@@ -389,12 +429,14 @@
       color:#eaeaf0;
       font-size:14px;
     }
+
     .mini-proof{
       margin-bottom:14px;
       color:var(--green);
       font-size:13px;
       font-weight:800;
     }
+
     .price-box{
       background:#101014;
       border:1px solid var(--line);
@@ -402,39 +444,46 @@
       padding:16px;
       margin-bottom:16px;
     }
+
     .price-label{
       font-size:13px;
       color:var(--muted);
       margin-bottom:5px;
     }
+
     .price{
       font-size:32px;
       line-height:1;
       font-weight:900;
       margin-bottom:8px;
     }
+
     .price small{
       font-size:14px;
       color:var(--muted);
       font-weight:700;
     }
+
     .discount{
       color:#ffb37a;
       font-size:14px;
       font-weight:800;
       margin-bottom:6px;
     }
+
     .cheap-note{
       color:var(--green);
       font-size:14px;
       font-weight:800;
     }
+
     .urgency-note{
       color:#f97316;
       font-size:13px;
       margin-top:8px;
       font-weight:700;
     }
+
     .buy-btn{
       display:block;
       width:100%;
@@ -455,6 +504,7 @@
       grid-template-columns:repeat(3,1fr);
       gap:16px;
     }
+
     .step{
       background:linear-gradient(180deg,var(--card),var(--card-2));
       border:1px solid var(--line);
@@ -463,6 +513,7 @@
       box-shadow:var(--shadow);
       text-align:center;
     }
+
     .step-num{
       width:52px;height:52px;border-radius:50%;
       margin:0 auto 12px;
@@ -471,11 +522,13 @@
       background:linear-gradient(135deg,var(--orange),var(--orange-2));
       color:#fff;
     }
+
     .step h3{
       font-size:18px;
       margin-bottom:8px;
       font-weight:800;
     }
+
     .step p{
       font-size:14px;
       color:var(--muted);
@@ -487,6 +540,7 @@
       display:grid;
       gap:14px;
     }
+
     .faq-item{
       background:linear-gradient(180deg,var(--card),var(--card-2));
       border:1px solid var(--line);
@@ -494,11 +548,13 @@
       padding:18px 20px;
       box-shadow:var(--shadow);
     }
+
     .faq-item h4{
       font-size:17px;
       font-weight:800;
       margin-bottom:8px;
     }
+
     .faq-item p{
       color:var(--muted);
       font-size:15px;
@@ -512,11 +568,13 @@
       text-align:center;
       box-shadow:var(--shadow);
     }
+
     .final-cta h3{
       font-size:34px;
       font-weight:900;
       margin-bottom:10px;
     }
+
     .final-cta p{
       color:var(--muted);
       max-width:740px;
@@ -538,6 +596,7 @@
       z-index:99;
       display:none;
     }
+
     .floating-cta a{
       display:flex;
       align-items:center;
@@ -573,6 +632,7 @@
       font-size:14px;
       line-height:1.4;
     }
+
     .esim-toast-icon{
       width:34px;
       height:34px;
@@ -584,6 +644,7 @@
       background:#fff7ed;
       font-size:17px;
     }
+
     .esim-toast-text{
       font-weight:700;
       color:#1f2937;
@@ -595,23 +656,43 @@
     }
 
     @media (max-width: 1024px){
-      .hero-wrap,.benefits,.country-grid,.steps,.image-showcase{
+      .benefits,.country-grid,.steps,.image-showcase{
         grid-template-columns:1fr 1fr;
       }
-      .hero h1{font-size:36px}
+
+      .hero h1{font-size:42px}
       .country-name{font-size:24px}
     }
 
     @media (max-width: 768px){
       body{padding-bottom:98px}
       .top-cta{display:none}
-      .hero{padding:28px 0 18px}
-      .hero-wrap,.benefits,.country-grid,.steps,.image-showcase{
+
+      .hero-full{
+        min-height:100vh;
+      }
+
+      .hero-full img{
+        height:100vh;
+      }
+
+      .hero-content{
+        padding:22px 16px 30px;
+      }
+
+      .hero h1{
+        font-size:36px;
+        line-height:1.08;
+      }
+
+      .hero p{
+        font-size:15px;
+      }
+
+      .benefits,.country-grid,.steps,.image-showcase{
         grid-template-columns:1fr;
       }
-      .hero-left{padding:20px}
-      .hero-right{min-height:auto}
-      .hero h1{font-size:30px}
+
       .section-title{font-size:24px}
       .section-subtitle{font-size:15px}
       .country-card{padding:20px}
@@ -619,6 +700,11 @@
       .country-desc{min-height:auto}
       .price{font-size:28px}
       .final-cta h3{font-size:24px}
+
+      .image-card img{
+        height:auto;
+      }
+
       .floating-cta{display:block}
       .esim-toast{
         bottom:92px;
@@ -638,38 +724,37 @@
   </div>
 
   <section class="hero">
-    <div class="container">
-      <div class="hero-wrap">
-        <div class="hero-left">
-          <div class="hero-badge">🔥 ใช้งานง่าย ไม่ต้องเปลี่ยนซิม</div>
-          <h1>
-            eSIM เที่ยวต่างประเทศ
-            <span class="highlight">เลือกประเทศ แล้วกดซื้อได้เลย</span>
-          </h1>
-          <p>
-            สำหรับคนที่กำลังจะเดินทางไปต่างประเทศและต้องการใช้งานอินเทอร์เน็ตทันที
-            ไม่ต้องหาซื้อซิมที่สนามบิน ไม่ต้องถอดซิมหลักออกจากเครื่อง
-          </p>
+    <div class="hero-full">
+      <img src="Gemini_Generated_Image_8nh2dd8nh2dd8nh2.png" alt="eSIM เที่ยวต่างประเทศ ใช้งานง่าย ไม่ต้องเปลี่ยนซิม">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">🔥 ใช้งานง่าย ไม่ต้องเปลี่ยนซิม</div>
+            <h1>
+              eSIM เที่ยวต่างประเทศ
+              <span class="highlight">เลือกประเทศ แล้วกดซื้อได้เลย</span>
+            </h1>
+            <p>
+              สำหรับคนที่กำลังจะเดินทางไปต่างประเทศและต้องการใช้งานอินเทอร์เน็ตทันที
+              ไม่ต้องหาซื้อซิมที่สนามบิน ไม่ต้องถอดซิมหลักออกจากเครื่อง
+            </p>
 
-          <div class="hero-points">
-            <span>สแกน QR แล้วใช้งานได้</span>
-            <span>ราคาเริ่มต้นคุ้มกว่าโรมมิ่ง</span>
-            <span>ลดทันที $5 ตอนชำระเงิน</span>
-            <span>เหมาะกับ iPhone / Android ที่รองรับ eSIM</span>
+            <div class="hero-points">
+              <span>สแกน QR แล้วใช้งานได้</span>
+              <span>ราคาเริ่มต้นคุ้มกว่าโรมมิ่ง</span>
+              <span>ลดทันที $5 ตอนชำระเงิน</span>
+              <span>เหมาะกับ iPhone / Android ที่รองรับ eSIM</span>
+            </div>
+
+            <div class="hero-social-proof">
+              🔥 วันนี้มีคนกำลังดู eSIM หลายประเทศอยู่ต่อเนื่อง
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn-main" href="#country-list">ดูประเทศทั้งหมด</a>
+              <a class="btn-ghost" href="#ad-images">ดูภาพโปรโมชั่น</a>
+            </div>
           </div>
-
-          <div class="hero-social-proof">
-            🔥 วันนี้มีคนกำลังดู eSIM หลายประเทศอยู่ต่อเนื่อง
-          </div>
-
-          <div class="hero-actions">
-            <a class="btn-main" href="#country-list">ดูประเทศทั้งหมด</a>
-            <a class="btn-ghost" href="#ad-images">ดูภาพโปรโมชั่น</a>
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <img src="Gemini_Generated_Image_8nh2dd8nh2dd8nh2.png" alt="eSIM เที่ยวต่างประเทศ ใช้งานง่าย ไม่ต้องเปลี่ยนซิม">
         </div>
       </div>
     </div>
@@ -707,12 +792,19 @@
     </div>
   </section>
 
+  <section class="section" id="ad-images">
+    <div class="container">
+      <h2 class="section-title">ภาพโปรโมชัน</h2>
+      <p class="section-subtitle">
+        ภาพช่วยให้คนหยุดดูเร็วขึ้น เข้าใจประโยชน์เร็วขึ้น และเพิ่มความน่าเชื่อถือของหน้าเว็บ
+      </p>
+
       <div class="image-showcase">
         <div class="image-card">
           <img src="Gemini_Generated_Image_ye3wyjye3wyjye3w.png" alt="เปรียบเทียบซิมเดิมกับ eSIM">
           <div class="image-card-content">
-            <h3>เปรียบเทียบให้เห็นชัด</h3>
-            <p>ช่วยให้ลูกค้าเข้าใจทันทีว่า eSIM สะดวกกว่า ไม่ต้องแกะซิม ไม่ต้องรอ และคุมค่าใช้จ่ายง่ายกว่า</p>
+            <h3>เปรียบเทียบให้เห็นภาพชัด</h3>
+            <p>ช่วยให้ลูกค้าเข้าใจทันทีว่า eSIM สะดวกกว่า ไม่ต้องแกะซิม ไม่ต้องรอ และคุมค่าใช้จ่ายได้ง่ายกว่า</p>
           </div>
         </div>
 
@@ -720,7 +812,7 @@
           <img src="Gemini_Generated_Image_jij9rujij9rujij9.png" alt="eSIM พร้อมใช้ใน 5 นาที">
           <div class="image-card-content">
             <h3>พร้อมใช้ก่อนบิน</h3>
-            <p>ภาพแนวพร้อมเดินทาง เหมาะกับใช้ในหน้าเว็บ โพสต์โฆษณา และรีมาร์เก็ตติ้ง</p>
+            <p>ภาพสื่อสารแนวพร้อมเดินทาง เหมาะกับใช้บนหน้าเว็บ ยิงแอด และรีมาร์เก็ตติ้งต่อได้เลย</p>
           </div>
         </div>
       </div>
